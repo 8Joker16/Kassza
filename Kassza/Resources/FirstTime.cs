@@ -33,7 +33,10 @@ namespace Kassza.Resources
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Kassza");
             string keyValue = "";
             if (key != null)
+            {
                 keyValue = (string)key.GetValue(@"SOFTWARE\Kassza");
+                key.Close();
+            }
             if (keyValue == null || keyValue == "0")
                 return false;
             else
