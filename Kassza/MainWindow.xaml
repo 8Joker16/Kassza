@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kassza"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" Width="1161.5" Height="660" MinWidth="1280" MinHeight="720">
+    <Grid RenderTransformOrigin="1,0">
+        <RichTextBox HorizontalAlignment="Left" Height="100" Margin="8,2,0,0" VerticalAlignment="Top" Width="914" FontSize="72">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <DataGrid HorizontalAlignment="Left" Height="450" Margin="8,105,0,0" VerticalAlignment="Top" Width="914" FontSize="20" Foreground="#FF1005FB" BorderBrush="#FF6DA4DA"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="926,105,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="1039,105,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="1152,105,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="926,219,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="1039,220,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="1152,219,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="926,333,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="1039,333,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="1152,333,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="MÉRLEG" HorizontalAlignment="Left" Margin="926,447,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="24" FontWeight="Bold"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="1039,447,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="36" FontWeight="Bold"/>
+        <Button Content="ENTER" HorizontalAlignment="Left" Margin="1152,447,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="24" FontWeight="Bold"/>
+        <Button Content="5%" HorizontalAlignment="Left" Margin="926,560,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="24" FontWeight="Bold"/>
+        <Button Content="18%" HorizontalAlignment="Left" Margin="1039,560,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="24" FontWeight="Bold"/>
+        <Button Content="27%" HorizontalAlignment="Left" Margin="1152,560,0,0" VerticalAlignment="Top" Width="108" Height="108" FontSize="24" FontWeight="Bold"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="926,2,0,0" VerticalAlignment="Top" Width="108" Height="100" FontSize="24" FontWeight="Bold" Foreground="#FFDE0000">
+            <Button.Background>
+                <ImageBrush ImageSource="icons8_settings_50px.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="KILÉPÉS" HorizontalAlignment="Left" Margin="1039,2,0,0" VerticalAlignment="Top" Width="108" Height="100" FontSize="24" FontWeight="Bold"/>
+        <Button Content="*" HorizontalAlignment="Left" Margin="1152,2,0,0" VerticalAlignment="Top" Width="108" Height="100" FontSize="36" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="60" Margin="8,560,0,0" TextWrapping="Wrap" Text="2008888825489" VerticalAlignment="Top" Width="380" FontSize="42" FontWeight="Bold"/>
     </Grid>
 </Window>

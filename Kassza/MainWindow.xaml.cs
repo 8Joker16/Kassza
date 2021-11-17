@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Kassza
 {
@@ -27,14 +28,17 @@ namespace Kassza
             {
                 //TODO:Start setup process
 
+
                 //TODO: Remove comment after debugging
                 //SetKey();
             }
             else
-            { 
+            {
                 //TODO:Start the application
             }
-             
+
+
         }
+
     }
 }
