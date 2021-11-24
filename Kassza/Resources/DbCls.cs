@@ -4,44 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
+using System.IO;
 
 namespace Kassza.Resources
 {
     public static class DbCls
     {
-        public static SqlConnection GetDbConn()
+        private static string GetPathTODb()
         {
-            string conn_string = Properties.Settings.Default.conn_string;
-            SqlConnection sqlconn = new SqlConnection(conn_string);
-            if (sqlconn.State != ConnectionState.Open)
-                sqlconn.Open();
-            return sqlconn;
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Kassza");
+        }
+        public static void CreateDB()
+        {
+            if (!Directory.Exists(GetPathTODb()))
+                Directory.CreateDirectory(GetPathTODb());
+
+            SQLiteConnection.CreateFile(Path.Combine(GetPathTODb(), "maindb.sqlite"));
         }
 
-        public static DataTable GetDataTable(string sql_comm)
+        private static SQLiteConnection GetConnection()
         {
-            SqlConnection sqlconn = GetDbConn();
-            DataTable table = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_comm, sqlconn);
-            adapter.Fill(table);
-            return table;
+            return new SQLiteConnection($"Data source={Path.Combine(GetPathTODb(),"maindb.sqlite")};Version=3;");
         }
 
-        public static void ExecSql(string sql_comm)
+        public static void CreateTables()
         {
-            SqlConnection sqlconn = GetDbConn();
-            SqlCommand command = new SqlCommand(sql_comm, sqlconn);
+            SQLiteConnection conn = GetConnection();
+            conn.Open();
+            string sql = @"create table User(
+            Id integer PRIMARY KEY AUTOINCREMENT,
+            UserName varchar(30) NOT NULL,
+            Password varchar(10) NOT NULL
+            );";
+
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
             command.ExecuteNonQuery();
+            conn.Close();
         }
-
-        public static void CLoseDbConn()
-        {
-            string conn_string = Properties.Settings.Default.conn_string;
-            SqlConnection connection = new SqlConnection(conn_string);
-            if (connection.State != ConnectionState.Closed)
-                connection.Close();
-        }
-
     }
 }

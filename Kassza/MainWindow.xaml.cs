@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using Kassza.Resources;
 
 namespace Kassza
 {
@@ -36,8 +37,8 @@ namespace Kassza
             {
                 //TODO:Start the application
             }
-
-
+            //DbCls.CreateDB();
+            DbCls.CreateTables();
         }
 
     }

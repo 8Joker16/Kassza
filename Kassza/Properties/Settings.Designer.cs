@@ -22,15 +22,5 @@ namespace Kassza.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\oszno\\source\\repos\\K" +
-            "assza\\Kassza\\Data\\db_local.mdf;Integrated Security=True")]
-        public string conn_string {
-            get {
-                return ((string)(this["conn_string"]));
-            }
-        }
     }
 }
